@@ -10,12 +10,14 @@
 - `style.css` — visual preto/roxo e responsividade
 - `script.js` — carrinho
 
-## Próxima etapa
-O checkout atual é apenas demonstrativo. Para vender de verdade, será necessário conectar:
-- um provedor de pagamento Pix;
-- backend para confirmar pagamentos;
-- entrega do produto digital;
-- domínio/hospedagem.
+## Checkout
+- QR Code Pix gerado na hora com o valor exato da compra (BR Code com CRC válido).
+- Na tela de pagamento aparece só o nome do recebedor + Pix Copia e Cola.
+- Após clicar em "Já fiz o pagamento", abre o chat da loja com o vendedor.
+
+## Chat
+- Backend em `../BNX-Chat` (repo `bnx-chat-server`): conversas + mensagens + painel do vendedor.
+- Painel do vendedor: `/chat-admin.html` no backend (login `vendedor`).
 
 O link do Discord já está configurado para:
 https://discord.gg/bnxsensi
