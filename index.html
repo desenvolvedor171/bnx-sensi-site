@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNX SENSI — Otimização & Sensi</title>
+  <meta name="description" content="BNX SENSI — otimização para iOS e Android, gerador de sensibilidade e HS Pescoço.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#">BNX <span>SENSI</span></a>
+      <nav>
+        <a href="#produtos">Produtos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#suporte">Suporte</a>
+      </nav>
+      <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="glow"></div>
+      <div class="container hero-content">
+        <div>
+          <div class="badge">⚡ BNX SENSI 2.0</div>
+          <h1>Seu jogo.<br><span>Seu controle.</span></h1>
+          <p>Otimizações e ferramentas para levar sua experiência no mobile a outro nível.</p>
+          <a class="primary" href="#produtos">Ver produtos</a>
+        </div>
+        <div class="hero-card">
+          <div class="hero-logo">BNX</div>
+          <div class="hero-line"></div>
+          <small>SENSI</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="produtos" class="products container">
+      <div class="section-title">
+        <div>
+          <span>CATÁLOGO</span>
+          <h2>Escolha seu produto</h2>
+        </div>
+        <p>Produtos digitais com acesso após a confirmação do pagamento.</p>
+      </div>
+
+      <div class="grid">
+        <article class="product">
+          <div class="icon"></div>
+          <div class="tag">iOS</div>
+          <h3>Otimização iOS</h3>
+          <p>Configurações e ajustes pensados para melhorar sua experiência no iPhone.</p>
+          <div class="bottom"><strong>R$ 9,99</strong><button onclick="addToCart('Otimização iOS', 9.99)">Comprar</button></div>
+        </article>
+
+        <article class="product">
+          <div class="icon">◉</div>
+          <div class="tag">ANDROID</div>
+          <h3>Otimização Android</h3>
+          <p>Ajustes para deixar sua experiência no Android mais fluida e personalizada.</p>
+          <div class="bottom"><strong>R$ 9,99</strong><button onclick="addToCart('Otimização Android', 9.99)">Comprar</button></div>
+        </article>
+
+        <article class="product">
+          <div class="icon">✦</div>
+          <div class="tag">FERRAMENTA</div>
+          <h3>Gerador de Sensi</h3>
+          <p>Gere configurações de sensibilidade de forma rápida e prática.</p>
+          <div class="bottom"><strong>R$ 3,50</strong><button onclick="addToCart('Gerador de Sensi', 3.50)">Comprar</button></div>
+        </article>
+
+        <article class="product">
+          <div class="icon">🎯</div>
+          <div class="tag">SENSI</div>
+          <h3>HS Pescoço</h3>
+          <p>Configuração digital para quem busca uma experiência de sensibilidade diferenciada.</p>
+          <div class="bottom"><strong>R$ 9,99</strong><button onclick="addToCart('HS Pescoço', 9.99)">Comprar</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre" class="about">
+      <div class="container about-box">
+        <div>
+          <span>BNX SENSI</span>
+          <h2>Feito para quem quer mais do jogo.</h2>
+        </div>
+        <p>Produtos digitais, acesso simples e suporte pelo Discord. A loja foi pensada para funcionar perfeitamente no celular e no computador.</p>
+      </div>
+    </section>
+
+    <section id="suporte" class="support container">
+      <div>
+        <span>PRECISA DE AJUDA?</span>
+        <h2>Fale com o suporte.</h2>
+        <p>Entre no servidor oficial da BNX SENSI para tirar suas dúvidas.</p>
+      </div>
+      <a class="secondary" href="https://discord.gg/bnxsensi" target="_blank">Entrar no Discord →</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <strong>BNX <span>SENSI</span></strong>
+      <small>© 2026 BNX SENSI. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <aside id="cart" class="cart">
+    <div class="cart-head"><h2>Seu carrinho</h2><button onclick="toggleCart()">×</button></div>
+    <div id="cartItems" class="cart-items"><p class="empty">Seu carrinho está vazio.</p></div>
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+    <button class="checkout" onclick="checkout()">Continuar para pagamento</button>
+    <small class="checkout-note">Checkout demonstrativo. Configure seu provedor de Pix antes de vender.</small>
+  </aside>
+  <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
