@@ -1,6 +1,6 @@
 // ================= Config da loja (edite aqui) =================
 const LOJA = {
-  CHAT_API: 'http://localhost:3001', // em produção: URL do backend na nuvem
+  CHAT_API: 'https://bnx-sensi-server.onrender.com', // backend do chat na nuvem
   PIX_KEY: '70209387602',
   PIX_NAME: 'LUENDERSON BERNARDO ROBERTO BARBOSA',
   PIX_CITY: 'URUCANIA'
