@@ -102,7 +102,6 @@ function checkout() {
   qr.addData(payload);
   qr.make();
 
-  const savedName = localStorage.getItem('bnx_name') || '';
   const modal = document.createElement('div');
   modal.className = 'pix-modal';
   modal.id = 'payModal';
@@ -117,7 +116,6 @@ function checkout() {
       <p class="pix-label">Pix Copia e Cola</p>
       <textarea id="pixCode" readonly>${payload}</textarea>
       <button class="copy-pix" onclick="copyPix(this)">Copiar código</button>
-      <input id="buyerName" class="buyer-name" placeholder="Seu nome ou apelido" value="${savedName}">
       <button class="paid-btn" onclick="confirmPayment()">Já fiz o pagamento ✓</button>
     </div>`;
   document.body.appendChild(modal);
@@ -143,14 +141,6 @@ function localOrderCode() {
 }
 
 async function confirmPayment() {
-  const nameInput = document.getElementById('buyerName');
-  const name = (nameInput.value || '').trim();
-  if (!name) {
-    alert('Digite seu nome para continuar.');
-    nameInput.focus();
-    return;
-  }
-  localStorage.setItem('bnx_name', name);
   const total = cart.reduce((sum, item) => sum + item.price, 0);
   const items = cart.map(i => ({ name: i.name, price: i.price }));
 
@@ -159,7 +149,7 @@ async function confirmPayment() {
     const r = await fetch(LOJA.CHAT_API + '/api/chat/start', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ buyerName: name, items, total })
+      body: JSON.stringify({ items, total })
     });
     if (r.ok) conv = await r.json();
   } catch (e) { /* sem backend: segue com código local */ }
